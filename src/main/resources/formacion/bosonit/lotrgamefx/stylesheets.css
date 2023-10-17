@@ -1,0 +1,23 @@
+.centeredTextArea .scroll-pane .content .text {
+    -fx-text-alignment: center;
+}
+
+#heroLabel {
+    -fx-effect: dropshadow(three-pass-box, #b5e9ff, 30, 0.5, 0, 0);
+}
+
+#beastLabel {
+    -fx-effect: dropshadow(three-pass-box, #e8837d, 30, 0.5, 0, 0);
+}
+
+#mainPane{
+    -fx-background-image: url("pQKRAY3.jpg");
+    -fx-background-color: #fcba03;
+    -fx-background-repeat: stretch;
+    -fx-background-position: center center;
+}
+
+#battlePane{
+    -fx-background-image: url("download.jpg");
+    -fx-background-radius: 20px;
+}

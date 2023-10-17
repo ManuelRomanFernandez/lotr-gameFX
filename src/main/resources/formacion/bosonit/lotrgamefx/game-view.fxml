@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" maxHeight="800.0" maxWidth="700.0" prefHeight="800.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="formacion.bosonit.lotrgamefx.controller.GameController">
+   <stylesheets>
+      <URL value="@stylesheets.css" />
+   </stylesheets>
+   <children>
+      <Pane fx:id="mainPane" prefHeight="800" prefWidth="700.0">
+         <children>
+            <Label fx:id="heroLabel" layoutX="65.0" layoutY="14.0" text="Héroes de la Tierra Media" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <AnchorPane fx:id="heroPane" layoutX="14.0" layoutY="55.0" prefHeight="216.0" prefWidth="320" style="-fx-border-color: #000000; -fx-border-width: 2; -fx-background-color: #b5e9ff; -fx-border-radius: 20; -fx-background-radius: 20;">
+               <children>
+                  <Label contentDisplay="RIGHT" graphicTextGap="78.0" layoutX="15.0" layoutY="14.0" prefHeight="25.0" prefWidth="290.0" text="Nombre:">
+                     <graphic>
+                        <TextField fx:id="heroName" alignment="CENTER_RIGHT" onKeyReleased="#updateHeroName" prefHeight="25.0" prefWidth="160.0" />
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <Label contentDisplay="RIGHT" graphicTextGap="98.0" layoutX="15.0" layoutY="56.0" prefHeight="25.0" prefWidth="290.0" text="Raza:">
+                     <graphic>
+                        <ComboBox fx:id="heroRace" onAction="#updateHeroRace" prefHeight="25.0" prefWidth="160.0" />
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label contentDisplay="RIGHT" graphicTextGap="99.0" layoutX="15.0" layoutY="96.0" prefHeight="25.0" prefWidth="290.0" text="Vida:">
+                     <graphic>
+                        <Spinner fx:id="heroHealth" editable="true" initialValue="120" max="999" min="100" onKeyReleased="#updateHeroHealth" onMouseClicked="#updateHeroHealthSpinner" prefHeight="25.0" prefWidth="160.0" />
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label contentDisplay="RIGHT" graphicTextGap="68.0" layoutX="15.0" layoutY="134.0" prefHeight="25.0" prefWidth="290.0" text="Armadura:">
+                     <graphic>
+                        <Spinner fx:id="heroArmor" editable="true" initialValue="35" max="80" min="15" onKeyReleased="#updateHeroArmor" onMouseClicked="#updateHeroArmorSpinner" prefHeight="25.0" prefWidth="160.0" />
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="heroAddButton" layoutX="125.0" layoutY="177.0" mnemonicParsing="false" onMouseClicked="#addHero" prefWidth="70.0" text="Añadir" />
+               </children></AnchorPane>
+            <Label fx:id="beastLabel" layoutX="413.0" layoutY="14.0" text="Súbditos del Señor Oscuro" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <AnchorPane fx:id="beastPane" layoutX="365.0" layoutY="55.0" prefHeight="216.0" prefWidth="320" style="-fx-border-color: #000000; -fx-border-width: 2; -fx-background-color: #e8837d; -fx-border-radius: 20; -fx-background-radius: 20;">
+               <children>
+                  <Label contentDisplay="RIGHT" graphicTextGap="78.0" layoutX="15.0" layoutY="14.0" prefHeight="25.0" prefWidth="290.0" text="Nombre:">
+                     <graphic>
+                        <TextField fx:id="beastName" alignment="CENTER_RIGHT" onKeyReleased="#updateBeastName" prefHeight="25.0" prefWidth="160.0" />
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label contentDisplay="RIGHT" graphicTextGap="98.0" layoutX="15.0" layoutY="56.0" prefHeight="25.0" prefWidth="290.0" text="Raza:">
+                     <graphic>
+                        <ComboBox fx:id="beastRace" onAction="#updateBeastRace" prefHeight="25.0" prefWidth="160.0" />
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label contentDisplay="RIGHT" graphicTextGap="99.0" layoutX="15.0" layoutY="96.0" prefHeight="25.0" prefWidth="290.0" text="Vida:">
+                     <graphic>
+                        <Spinner fx:id="beastHealth" editable="true" initialValue="120" max="999" min="100" onKeyReleased="#updateBeastHealth" onMouseClicked="#updateBeastHealthSpinner" prefHeight="25.0" prefWidth="160.0" />
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label contentDisplay="RIGHT" graphicTextGap="68.0" layoutX="15.0" layoutY="134.0" prefHeight="25.0" prefWidth="290.0" text="Armadura:">
+                     <graphic>
+                        <Spinner fx:id="beastArmor" editable="true" initialValue="35" max="80" min="15" onKeyReleased="#updateBeastArmor" onMouseClicked="#updateBeastArmorSpinner" prefHeight="25.0" prefWidth="160.0" />
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="beastAddButton" layoutX="125.0" layoutY="177.0" mnemonicParsing="false" onMouseClicked="#addBeast" prefWidth="70.0" text="Añadir" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="battlePane" layoutX="15.0" layoutY="296.0" prefHeight="488.0" prefWidth="670.0" style="-fx-border-color: #000000; -fx-border-width: 2; -fx-background-color: #e6e6e6; -fx-background-radius: 20;">
+               <children>
+                  <ListView fx:id="heroList" layoutX="18.0" layoutY="14.0" prefHeight="119.0" prefWidth="290.0" style="-fx-border-color: black; -fx-border-radius: 5; -fx-background-radius: 5;" />
+                  <Button fx:id="heroUpButton" layoutX="18.0" layoutY="133.0" mnemonicParsing="false" onMouseClicked="#moveHeroUp" prefWidth="70.0" text="Subir" />
+                  <Button fx:id="heroDownButton" layoutX="128.0" layoutY="133.0" mnemonicParsing="false" onMouseClicked="#moveHeroDown" prefWidth="70.0" text="Bajar" />
+                  <Button fx:id="heroRemoveButton" layoutX="238.0" layoutY="133.0" mnemonicParsing="false" onMouseClicked="#removeHero" prefWidth="70.0" text="Eliminar" />
+                  <ListView fx:id="beastList" layoutX="362.0" layoutY="14.0" prefHeight="119.0" prefWidth="290.0" style="-fx-border-color: black; -fx-border-radius: 5; -fx-background-radius: 5;" />
+                  <Button fx:id="beastUpButton" layoutX="362.0" layoutY="133.0" mnemonicParsing="false" onMouseClicked="#moveBeastUp" prefWidth="70.0" text="Subir" />
+                  <Button fx:id="beastDownButton" layoutX="472.0" layoutY="133.0" mnemonicParsing="false" onMouseClicked="#moveBeastDown" prefWidth="70.0" text="Bajar" />
+                  <Button fx:id="beastRemoveButton" layoutX="582.0" layoutY="133.0" mnemonicParsing="false" onMouseClicked="#removeBeast" prefWidth="70.0" text="Eliminar" />
+                  <Button fx:id="gameStartButton" layoutX="19.0" layoutY="181.0" mnemonicParsing="false" onMouseClicked="#gameStart" prefHeight="25.0" prefWidth="632.0" text="La batalla comienza" />
+                  <ScrollPane fx:id="gamePane" layoutX="18.0" layoutY="206.0" prefHeight="264.0" prefWidth="634.0">
+                     <content>
+                        <TextArea fx:id="gameLog" editable="false" prefHeight="262.0" prefWidth="632.0" style="-fx-border-color: black; -fx-border-radius: 5; -fx-background-radius: 5;" styleClass="centeredTextArea">
+                           <font>
+                              <Font size="16.0" />
+                           </font></TextArea>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </Pane>
+   </children>
+</VBox>
